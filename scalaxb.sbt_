@@ -1,0 +1,8 @@
+lazy val root = (project in file(".")).
+  enablePlugins(ScalaxbPlugin).
+  settings(
+    name := "FineRenamer",
+    scalaxbPackageName in (Compile, scalaxb) := "generated",
+    // scalaxbAutoPackages in (Compile, scalaxb) := true
+    scalaxbDispatchVersion in (Compile, scalaxb) := "0.11.3"
+  )
