@@ -25,10 +25,17 @@ class RenameNavigation extends FileNavigation {
   }
 
   def manageFile(file: File, level: Int): Unit = {
-    val parent = file.getParentFile()
+    val parent = file.getParentFile
 
-    val newName = file.getName() match {
-      case StructuredFileName(_) => return
+    val newName = file.getName match {
+      case StructuredFileName(prefix, date, counter, extension) =>
+        val dirPrefix = PrefixManager.computePrefix(parent)
+        if (!dirPrefix.equals(prefix)) {
+          print(Utils.computeIndent(level) + "File: " + file.getName)
+          val newFileName = StructuredFileName(dirPrefix, date, counter, extension)
+          print(" New Name: " + newFileName)
+          newFileName
+        } else return
       case DateCountFileName(date, counter, ext) =>
         print(Utils.computeIndent(level) + "File: " + file.getName)
         Utils.computeNewFileName(parent, date, counter, ext)
