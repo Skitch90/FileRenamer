@@ -13,7 +13,6 @@ import scala.xml.{Elem, PrettyPrinter, XML}
 object PrefixManager {
   private var prefixMap = Map[String, String]()
   private var modifiedMap = false
-  val prefixesFile = new File("""prefixes""")
   val prefixesXmlFileName = "prefixes.xml";
 
   def mapContains(key: String): Boolean = prefixMap.contains(key)
