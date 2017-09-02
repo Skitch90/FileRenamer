@@ -10,7 +10,7 @@ import util.filenames.StructuredFileName
   */
 class ScanFilesNavigation extends FileNavigation {
   override def executeNavigation(file: File, skipDirsWithNoPrefix: Option[Boolean]): Unit = {
-    if (file.isDirectory()) {
+    if (file.isDirectory) {
       manageDirectory(file, 0)
     } else {
       manageFile(file, 0)
@@ -18,7 +18,7 @@ class ScanFilesNavigation extends FileNavigation {
   }
 
   override def manageDirectory(dir: File, level: Int, skipDirsWithNoPrefix: Boolean): Unit = {
-    val (directories, files) = dir.listFiles() partition (x => x.isDirectory())
+    val (directories, files) = dir.listFiles() partition (x => x.isDirectory)
     directories foreach (manageDirectory(_, level + 1))
     files foreach(manageFile(_, level + 1))
   }

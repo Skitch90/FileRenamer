@@ -12,7 +12,7 @@ class RenameNavigation extends FileNavigation {
   def executeNavigation(file: File, skipDirsWithNoPrefix: Option[Boolean]): Unit = {
     PrefixManager.loadPrefixes()
 
-    if (file.isDirectory()) {
+    if (file.isDirectory) {
       skipDirsWithNoPrefix match {
         case Some(b) => manageDirectory(file, 0, b)
         case None    => manageDirectory(file, 0)
@@ -45,8 +45,8 @@ class RenameNavigation extends FileNavigation {
       case _ => return
     }
 
-    val newFile = new File((parent.getAbsolutePath) + Utils.PATH_SEPARATOR + newName)
-    if (file renameTo (newFile)) {
+    val newFile = new File(parent.getAbsolutePath + Utils.PATH_SEPARATOR + newName)
+    if (file renameTo newFile) {
       println(""" Renamed""")
     } else {
       println()

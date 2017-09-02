@@ -3,6 +3,7 @@ package util
 import java.io.File
 import java.util.{Calendar, Date}
 
+import navigation.FileNavigation
 import navigation.impl.{RenameNavigation, ScanDirsNavigation, ScanFilesNavigation}
 import org.apache.commons.cli.CommandLine
 import org.apache.commons.lang3.StringUtils
@@ -13,9 +14,9 @@ import util.filenames.StructuredFileName
 import scala.util.matching.Regex
 
 object Utils {
-  val PATH_SEPARATOR = File.separator
+  val PATH_SEPARATOR: String = File.separator
 
-  def computeIndent(level: Int) = StringUtils.repeat(" ", level * 4)
+  def computeIndent(level: Int): String = StringUtils.repeat(" ", level * 4)
 
   def matches(pattern: Regex, string: String): Boolean = {
     pattern.unapplySeq(string) match {
@@ -24,17 +25,17 @@ object Utils {
     }
   }
 
-  def computeNewFileName(parent: File, date: Date, counter: Int, ext: String) = {
+  def computeNewFileName(parent: File, date: Date, counter: Int, ext: String): String = {
 
     val prefix = PrefixManager.computePrefix(parent)
     var newName = StructuredFileName(prefix, date, counter, ext)
     print(" New Name: " + newName)
-    if (new File(parent.getAbsolutePath() + PATH_SEPARATOR + newName).exists()) {
+    if (new File(parent.getAbsolutePath + PATH_SEPARATOR + newName).exists()) {
       print(""" File già esiste """)
       val modArray = parent.listFiles() filter
-        (x => matches(StructuredFileName.regex, x.getName())) map
-        (x => StructuredFileName.unapply(x.getName()) match {
-          case Some(x) => x
+        (x => matches(StructuredFileName.regex, x.getName)) map
+        (x => StructuredFileName.unapply(x.getName) match {
+          case Some(tuple) => tuple
         })
 
       val maxCounter = modArray filter
@@ -53,7 +54,7 @@ object Utils {
       DateUtils.truncatedEquals(sub._2, ref._2, Calendar.DAY_OF_MONTH) &&
       sub._4.equals(ref._4)
 
-  def getNavigator(cl: CommandLine) = {
+  def getNavigator(cl: CommandLine): (FileNavigation, Option[Boolean]) = {
     if (cl.hasOption("r")) {
       (new RenameNavigation(), Some(cl.hasOption("sk")))
     } else if (cl.hasOption("sd")) {

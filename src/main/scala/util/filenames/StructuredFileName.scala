@@ -13,7 +13,7 @@ object StructuredFileName {
   val regex = new Regex("""^([a-z]{3})_(\d{4}-\d{2}-\d{2})_(\d{1,2})(\..+)$""",
     "prefix", "date", "counter", "extension")
 
-  def unapply(str: String) = {
+  def unapply(str: String): Option[(String, Date, Int, String)] = {
     regex.findFirstMatchIn(str) match {
       case Some(matchObj) => Some((matchObj.group("prefix"),
         targetDateFormatter.parse(matchObj.group("date")),

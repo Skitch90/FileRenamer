@@ -13,35 +13,35 @@ import scala.xml.{Elem, PrettyPrinter, XML}
 object PrefixManager {
   private var prefixMap = Map[String, String]()
   private var modifiedMap = false
-  val prefixesXmlFileName = "prefixes.xml";
+  val prefixesXmlFileName = "prefixes.xml"
 
   def mapContains(key: String): Boolean = prefixMap.contains(key)
 
   def computePrefix(dir: File): String = {
-    val dirName = dir.getName()
-    prefixMap.contains(dirName) match {
-      case true => prefixMap(dirName)
-      case false => searchPrefixFromFiles(dir) match {
+    val dirName = dir.getName
+    if (prefixMap.contains(dirName)) {
+      prefixMap(dirName)
+    } else {
+      searchPrefixFromFiles(dir) match {
         case Some(p) => p
-        case None    => prefixFromInput(dirName)
+        case None => prefixFromInput(dirName)
       }
     }
   }
 
   def searchPrefixFromFiles(dir: File): Option[String] = {
     val prefixSet = dir.listFiles() filter
-      (x => Utils.matches(StructuredFileName.regex, x.getName())) map
-      (x => StructuredFileName.unapply(x.getName()) match {
-        case Some(x) => x._1
+      (x => Utils.matches(StructuredFileName.regex, x.getName)) map
+      (x => StructuredFileName.unapply(x.getName) match {
+        case Some(tuple) => tuple._1
       }) toSet
 
     prefixSet.size match {
-      case 1 => {
+      case 1 =>
         val p = prefixSet.iterator.next()
-        prefixMap += (dir.getName() -> p)
+        prefixMap += (dir.getName -> p)
         modifiedMap = true
         Some(p)
-      }
       case _ => None
     }
   }
@@ -61,11 +61,11 @@ object PrefixManager {
     }
   }
 
-  def loadPrefixes() = {
+  def loadPrefixes(): Unit = {
     val inputFile = new File(prefixesXmlFileName)
     if (inputFile.exists()) {
       val xml = XML.loadFile(prefixesXmlFileName)
-      val prefixList = (xml \\ "prefix") foreach (
+      (xml \\ "prefix") foreach (
         prefix => prefixMap += (
           StringEscapeUtils.unescapeHtml4((prefix \ "@dir").toString()) -> (prefix \ "@prf").toString())
         )
@@ -74,7 +74,7 @@ object PrefixManager {
     }
   }
 
-  def storePrefixes() = {
+  def storePrefixes(): Unit = {
     if (modifiedMap) {
       val prefixElemsList: immutable.Iterable[Elem] = prefixMap map(x => <prefix prf={x._2} dir={x._1} />)
       val prefixes = <prefixes>{prefixElemsList}</prefixes>

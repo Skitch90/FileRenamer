@@ -3,7 +3,7 @@ package util
 import org.apache.commons.cli.{Option, OptionGroup, Options}
 
 object CLIUtils {
-  def buildCommandLineOptions() = {
+  def buildCommandLineOptions(): Options = {
     val cmdOpts = new Options()
 
     //Input

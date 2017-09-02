@@ -10,7 +10,7 @@ abstract class FileNavigation {
     Console.println(Utils.computeIndent(level) + "Directory: " + dir.getName)
     val filesList = dir.listFiles()
 
-    val (directories, files) = filesList partition (x => x.isDirectory())
+    val (directories, files) = filesList partition (x => x.isDirectory)
     directories foreach (manageDirectory(_, level + 1, skipDirsWithNoPrefix))
     if (PrefixManager.mapContains(dir.getName) ||
       (PrefixManager.searchPrefixFromFiles(dir) match {
