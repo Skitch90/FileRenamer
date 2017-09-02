@@ -3,9 +3,9 @@ package prefixmanager
 import java.io.File
 import java.util.Scanner
 
+import filenamepatternmanager.filenames.StructuredFileName
 import org.apache.commons.lang3.StringEscapeUtils
 import util.Utils
-import util.filenames.StructuredFileName
 
 import scala.collection.immutable
 import scala.xml.{Elem, PrettyPrinter, XML}

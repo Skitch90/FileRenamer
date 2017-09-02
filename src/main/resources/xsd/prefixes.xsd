@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://prefixes.filerenamer.it" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://prefixes.filerenamer.it">
+  <xs:element name="prefixes" type="prefixesType" />
+  <xs:complexType name="prefixType">
+        <xs:attribute type="xs:string" name="dir" />
+        <xs:attribute type="xs:string" name="prf" />
+  </xs:complexType>
+  <xs:complexType name="prefixesType">
+    <xs:sequence>
+      <xs:element type="prefixType" name="prefix" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

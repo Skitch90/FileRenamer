@@ -2,8 +2,8 @@ package navigation.impl
 
 import java.io.File
 
+import filenamepatternmanager.filenames.StructuredFileName
 import navigation.FileNavigation
-import util.filenames.StructuredFileName
 
 /**
   * Created by alesc on 23/03/2017.

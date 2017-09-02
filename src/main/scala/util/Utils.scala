@@ -3,13 +3,13 @@ package util
 import java.io.File
 import java.util.{Calendar, Date}
 
+import filenamepatternmanager.filenames.StructuredFileName
 import navigation.FileNavigation
 import navigation.impl.{RenameNavigation, ScanDirsNavigation, ScanFilesNavigation}
 import org.apache.commons.cli.CommandLine
 import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.time.DateUtils
 import prefixmanager.PrefixManager
-import util.filenames.StructuredFileName
 
 import scala.util.matching.Regex
 

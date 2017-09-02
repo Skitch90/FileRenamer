@@ -1,8 +1,8 @@
 name := "FileRenamer"
 
-version := "1.1"
+version := "1.2"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.3"
 
 libraryDependencies += "commons-cli" % "commons-cli" % "1.4"
 libraryDependencies += "commons-io" % "commons-io" % "2.5"

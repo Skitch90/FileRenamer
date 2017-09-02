@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<prefixes>
+<prefixes xmlns="http://prefixes.filerenamer.it">
   <prefix dir="Karelian_Bear_Dog" prf="kbd"/>
   <prefix dir="Akita_Inu" prf="akt"/>
   <prefix dir="East_Siberian_Laika" prf="esl"/>

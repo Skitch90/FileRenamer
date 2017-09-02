@@ -3,10 +3,10 @@ package navigation.impl
 import java.io.File
 import java.util.Date
 
+import filenamepatternmanager.filenames.{DateCountFileName, NoDateFileName, StructuredFileName}
 import navigation.FileNavigation
 import prefixmanager.PrefixManager
 import util.Utils
-import util.filenames.{DateCountFileName, NoDateFileName, StructuredFileName}
 
 class RenameNavigation extends FileNavigation {
   def executeNavigation(file: File, skipDirsWithNoPrefix: Option[Boolean]): Unit = {

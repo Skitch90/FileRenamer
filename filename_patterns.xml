@@ -1,0 +1,43 @@
+<filenamePatterns xmlns="http://filenamepatterns.filerenamer.it">
+    <dateCountPattern>
+        <pattern>(\d{2}\.\d{2}\.\d{2})[ ]?-[ ]?(\d+).*</pattern>
+        <dateFormat>dd.MM.yy</dateFormat>
+    </dateCountPattern>
+    <dateCountPattern>
+        <pattern>(\d{2}\.\d{2}\.\d{4})[ ]?-[ ]?(\d+).*</pattern>
+        <dateFormat>dd.MM.yyyy</dateFormat>
+    </dateCountPattern>
+    <dateCountPattern>
+        <pattern>(\d{4}-\d{2}-\d{2})_(\d+).*</pattern>
+        <dateFormat>yyyy-MM-dd</dateFormat>
+    </dateCountPattern>
+    <dateCountPattern>
+        <pattern>(\d{4}-\d{2}-\d{2}) - (\d+).*</pattern>
+        <dateFormat>yyyy-MM-dd</dateFormat>
+    </dateCountPattern>
+    <dateCountPattern>
+        <pattern>(\d{2}-\d{2}-\d{2})[ ]?-[ ]?(\d+).*</pattern>
+        <dateFormat>dd-MM-yy</dateFormat>
+    </dateCountPattern>
+    <noDatePattern>
+        <pattern>(?:FB_IMG_|facebook_)</pattern>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}</pattern>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>\d{2,4} - \d(?: \(\d+\))?</pattern>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>[0-9a-f]{32}</pattern>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>\d{8}_\d{16}_\d{19}_n</pattern>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>- - -.*</pattern>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>image(?: \(\d\))?</pattern>
+    </noDatePattern>
+</filenamePatterns>

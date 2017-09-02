@@ -1,5 +1,6 @@
 import java.io.{File, FileOutputStream}
 
+import filenamepatternmanager.FileNamePatternManager
 import org.apache.commons.cli.DefaultParser
 import org.apache.commons.io.output.TeeOutputStream
 import util.{CLIUtils, Utils}
@@ -14,6 +15,8 @@ object FileRenamerMain {
       throw new IllegalArgumentException(
         """Il path "%s" non è valido""".format(inputFile.getAbsolutePath))
     }
+
+    FileNamePatternManager.loadPatterns()
 
     val executeNav = () => {
       val (fNav, sk) = Utils.getNavigator(cmd)
