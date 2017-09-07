@@ -1,4 +1,4 @@
-package util
+package it.alesc.filerenamer.util
 
 import org.apache.commons.cli.{Option, OptionGroup, Options}
 

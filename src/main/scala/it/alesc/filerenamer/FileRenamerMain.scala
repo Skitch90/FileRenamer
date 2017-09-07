@@ -1,9 +1,11 @@
+package it.alesc.filerenamer
+
 import java.io.{File, FileOutputStream}
 
-import filenamepatternmanager.FileNamePatternManager
+import it.alesc.filerenamer.filenamepatternmanager.FileNamePatternManager
+import it.alesc.filerenamer.util.{CLIUtils, Utils}
 import org.apache.commons.cli.DefaultParser
 import org.apache.commons.io.output.TeeOutputStream
-import util.{CLIUtils, Utils}
 
 object FileRenamerMain {
   def main(args: Array[String]): Unit = {

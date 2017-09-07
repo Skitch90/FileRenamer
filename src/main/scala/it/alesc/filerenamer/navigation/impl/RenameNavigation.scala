@@ -1,12 +1,12 @@
-package navigation.impl
+package it.alesc.filerenamer.navigation.impl
 
 import java.io.File
 import java.util.Date
 
-import filenamepatternmanager.filenames.{DateCountFileName, NoDateFileName, StructuredFileName}
-import navigation.FileNavigation
-import prefixmanager.PrefixManager
-import util.Utils
+import it.alesc.filerenamer.filenamepatternmanager.filenames.{DateCountFileName, NoDateFileName, StructuredFileName}
+import it.alesc.filerenamer.navigation.FileNavigation
+import it.alesc.filerenamer.prefixmanager.PrefixManager
+import it.alesc.filerenamer.util.Utils
 
 class RenameNavigation extends FileNavigation {
   def executeNavigation(file: File, skipDirsWithNoPrefix: Option[Boolean]): Unit = {

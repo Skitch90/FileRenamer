@@ -1,9 +1,9 @@
-package navigation.impl
+package it.alesc.filerenamer.navigation.impl
 
 import java.io.File
 
-import navigation.DirsNavigation
-import prefixmanager.PrefixManager
+import it.alesc.filerenamer.navigation.DirsNavigation
+import it.alesc.filerenamer.prefixmanager.PrefixManager
 
 /**
   * Created by alesc on 23/03/2017.

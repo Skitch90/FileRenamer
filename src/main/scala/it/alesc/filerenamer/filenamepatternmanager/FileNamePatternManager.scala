@@ -1,10 +1,10 @@
-package filenamepatternmanager
+package it.alesc.filerenamer.filenamepatternmanager
 
 import java.io.File
 import java.text.SimpleDateFormat
 
-import filenamepatternmanager.filenames.DateCountFileName.DateCountExtGroupsRegex
-import filenamepatternmanager.filenames.NoDateFileName.ExtGroupRegex
+import it.alesc.filerenamer.filenamepatternmanager.filenames.DateCountFileName.DateCountExtGroupsRegex
+import it.alesc.filerenamer.filenamepatternmanager.filenames.NoDateFileName.ExtGroupRegex
 
 import scala.xml.XML
 

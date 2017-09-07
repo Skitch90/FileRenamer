@@ -1,9 +1,9 @@
-package navigation
+package it.alesc.filerenamer.navigation
 
 import java.io.File
 
-import prefixmanager.PrefixManager
-import util.Utils
+import it.alesc.filerenamer.prefixmanager.PrefixManager
+import it.alesc.filerenamer.util.Utils
 
 abstract class FileNavigation {
   def manageDirectory(dir: File, level: Int, skipDirsWithNoPrefix: Boolean): Unit = {

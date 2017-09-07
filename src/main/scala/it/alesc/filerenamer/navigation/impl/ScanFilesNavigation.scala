@@ -1,9 +1,9 @@
-package navigation.impl
+package it.alesc.filerenamer.navigation.impl
 
 import java.io.File
 
-import filenamepatternmanager.filenames.StructuredFileName
-import navigation.FileNavigation
+import it.alesc.filerenamer.filenamepatternmanager.filenames.StructuredFileName
+import it.alesc.filerenamer.navigation.FileNavigation
 
 /**
   * Created by alesc on 23/03/2017.

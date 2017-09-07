@@ -1,15 +1,15 @@
-package util
+package it.alesc.filerenamer.util
 
 import java.io.File
 import java.util.{Calendar, Date}
 
-import filenamepatternmanager.filenames.StructuredFileName
-import navigation.FileNavigation
-import navigation.impl.{RenameNavigation, ScanDirsNavigation, ScanFilesNavigation}
+import it.alesc.filerenamer.filenamepatternmanager.filenames.StructuredFileName
+import it.alesc.filerenamer.navigation.FileNavigation
+import it.alesc.filerenamer.navigation.impl.{RenameNavigation, ScanDirsNavigation, ScanFilesNavigation}
+import it.alesc.filerenamer.prefixmanager.PrefixManager
 import org.apache.commons.cli.CommandLine
 import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.time.DateUtils
-import prefixmanager.PrefixManager
 
 import scala.util.matching.Regex
 

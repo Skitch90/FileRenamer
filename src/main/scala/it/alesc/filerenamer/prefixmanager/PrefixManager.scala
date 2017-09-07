@@ -1,11 +1,11 @@
-package prefixmanager
+package it.alesc.filerenamer.prefixmanager
 
 import java.io.File
 import java.util.Scanner
 
-import filenamepatternmanager.filenames.StructuredFileName
+import it.alesc.filerenamer.filenamepatternmanager.filenames.StructuredFileName
+import it.alesc.filerenamer.util.Utils
 import org.apache.commons.lang3.StringEscapeUtils
-import util.Utils
 
 import scala.collection.immutable
 import scala.xml.{Elem, PrettyPrinter, XML}

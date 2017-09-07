@@ -1,4 +1,4 @@
-package navigation
+package it.alesc.filerenamer.navigation
 
 import java.io.File
 

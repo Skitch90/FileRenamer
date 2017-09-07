@@ -1,4 +1,4 @@
-package filenamepatternmanager.filenames
+package it.alesc.filerenamer.filenamepatternmanager.filenames
 
 import java.text.SimpleDateFormat
 import java.util.Date

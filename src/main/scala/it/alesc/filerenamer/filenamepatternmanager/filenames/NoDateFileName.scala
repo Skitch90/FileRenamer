@@ -1,7 +1,7 @@
-package filenamepatternmanager.filenames
+package it.alesc.filerenamer.filenamepatternmanager.filenames
 
-import filenamepatternmanager.FileNamePatternManager
-import util.Utils
+import it.alesc.filerenamer.filenamepatternmanager.FileNamePatternManager
+import it.alesc.filerenamer.util.Utils
 
 import scala.util.matching.Regex
 
