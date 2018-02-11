@@ -40,4 +40,8 @@
     <noDatePattern>
         <pattern>image(?: \(\d\))?</pattern>
     </noDatePattern>
+    <noDatePattern>
+        <pattern>[a-f0-9]+\-a\-nw\-p</pattern>
+        <example>e2e7829a115efe0-a-nw-p.jpg</example>
+    </noDatePattern>
 </filenamePatterns>
