@@ -2,7 +2,7 @@ package it.alesc.filerenamer.navigation.impl
 
 import java.io.File
 
-import it.alesc.filerenamer.filenamepatternmanager.filenames.StructuredFileName
+import it.alesc.filerenamer.filenamepatternmanager.filenames.{DateCountFileName, NoDateFileName, StructuredFileName}
 import it.alesc.filerenamer.navigation.FileNavigation
 
 /**
@@ -26,7 +26,9 @@ class ScanFilesNavigation extends FileNavigation {
   override def manageFile(file: File, level: Int): Unit = {
     file.getName match {
       case StructuredFileName(_) =>
-      case _ => Console.println(file.getAbsolutePath)
+      case DateCountFileName(_) => Console.println(file.getAbsolutePath + " - Known pattern: Y")
+      case NoDateFileName(_) => Console.println(file.getAbsolutePath + " - Known pattern: Y")
+      case _ => Console.println(file.getAbsolutePath + " - Known pattern: N")
     }
   }
 }
