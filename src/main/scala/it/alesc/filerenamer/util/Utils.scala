@@ -15,6 +15,7 @@ import scala.util.matching.Regex
 
 object Utils {
   val PATH_SEPARATOR: String = File.separator
+  val FILE_EXTENSION_REGEX = """(\.[^.]+)"""
 
   def computeIndent(level: Int): String = StringUtils.repeat(" ", level * 4)
 

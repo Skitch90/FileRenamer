@@ -18,5 +18,5 @@ object NoDateFileName {
   }
 
   class ExtGroupRegex(regexStr: String)
-    extends Regex("""^""" + regexStr + """(\..+)$""", "extension")
+    extends Regex("""^""" + regexStr + Utils.FILE_EXTENSION_REGEX + """$""", "extension")
 }

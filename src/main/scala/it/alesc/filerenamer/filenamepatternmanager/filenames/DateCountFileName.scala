@@ -21,5 +21,5 @@ object DateCountFileName {
   }
 
   class DateCountExtGroupsRegex(regexStr: String)
-    extends Regex("""^""" + regexStr + """(\..+)$""", "date", "counter", "extension")
+    extends Regex("""^""" + regexStr + Utils.FILE_EXTENSION_REGEX + """$""", "date", "counter", "extension")
 }
