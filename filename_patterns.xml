@@ -44,4 +44,8 @@
         <pattern>[a-f0-9]+\-a\-nw\-p</pattern>
         <example>e2e7829a115efe0-a-nw-p.jpg</example>
     </noDatePattern>
+    <noDatePattern>
+        <pattern>\d+</pattern>
+        <example>001.jpg</example>
+    </noDatePattern>
 </filenamePatterns>
