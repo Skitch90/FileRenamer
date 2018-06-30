@@ -19,6 +19,11 @@
         <pattern>(\d{2}-\d{2}-\d{2})[ ]?-[ ]?(\d+).*</pattern>
         <dateFormat>dd-MM-yy</dateFormat>
     </dateCountPattern>
+    <datePattern>
+        <pattern>IMG_(\d{8})\d_\d{6}</pattern>
+        <dateFormat>yyyyMMdd</dateFormat>
+        <example>IMG_201610300_091531.jpg</example>
+    </datePattern>
     <noDatePattern>
         <pattern>(?:FB_IMG_|facebook_)</pattern>
     </noDatePattern>
@@ -47,5 +52,29 @@
     <noDatePattern>
         <pattern>\d+</pattern>
         <example>001.jpg</example>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>[0-9a-fA-F]+</pattern>
+        <example>100df9c7.jpg</example>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>hpim_sl\d{6}</pattern>
+        <example>hpim_sl380476.jpg</example>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>picture_\d+</pattern>
+        <example>picture_36.jpg</example>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>none\-\d+</pattern>
+        <example>none-12852.jpg</example>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>\d{8}_\d{15}_\d{19}_n</pattern>
+        <example>16174753_398680060464693_3762393805763982712_n.jpg</example>
+    </noDatePattern>
+    <noDatePattern>
+        <pattern>gplus_\d+</pattern>
+        <example>gplus-1162097745.jpg</example>
     </noDatePattern>
 </filenamePatterns>

@@ -3,7 +3,7 @@ package it.alesc.filerenamer.navigation.impl
 import java.io.File
 import java.util.Date
 
-import it.alesc.filerenamer.filenamepatternmanager.filenames.{DateCountFileName, NoDateFileName, StructuredFileName}
+import it.alesc.filerenamer.filenamepatternmanager.filenames.{DateCountFileName, DateFileName, NoDateFileName, StructuredFileName}
 import it.alesc.filerenamer.navigation.FileNavigation
 import it.alesc.filerenamer.prefixmanager.PrefixManager
 import it.alesc.filerenamer.util.Utils
@@ -39,6 +39,9 @@ class RenameNavigation extends FileNavigation {
       case DateCountFileName(date, counter, ext) =>
         print(Utils.computeIndent(level) + "File: " + file.getName)
         Utils.computeNewFileName(parent, date, counter, ext)
+      case DateFileName(date, ext) =>
+        print(Utils.computeIndent(level) + "File: " + file.getName)
+        Utils.computeNewFileName(parent, date, 1, ext)
       case NoDateFileName(ext) =>
         print(Utils.computeIndent(level) + "File: " + file.getName)
         Utils.computeNewFileName(parent, new Date(file.lastModified()), 1, ext)

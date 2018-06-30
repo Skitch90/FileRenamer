@@ -21,7 +21,8 @@ abstract class FileNavigation {
     }
   }
 
-  def manageDirectory(dir: File, level: Int): Unit = manageDirectory(dir, level, false)
+  def manageDirectory(dir: File, level: Int = 0): Unit = manageDirectory(dir, level, false)
   def executeNavigation(file: File, skipDirsWithNoPrefix: Option[Boolean]): Unit
-  def manageFile(file: File, level: Int): Unit
+
+  def manageFile(file: File, level: Int = 0): Unit
 }

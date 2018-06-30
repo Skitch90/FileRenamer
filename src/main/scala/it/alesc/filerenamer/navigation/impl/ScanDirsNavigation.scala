@@ -13,7 +13,7 @@ class ScanDirsNavigation extends DirsNavigation {
     PrefixManager.loadPrefixes()
 
     if (file.isDirectory) {
-      manageDirectory(file, 0)
+      manageDirectory(file)
     }
   }
 
